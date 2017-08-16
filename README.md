@@ -11,6 +11,8 @@ Vue Tree Select
 
 ## 截图展示
 
+[在线 demo](https://lvwenhan.com/vue-tree-select/example/)
+
 ![image 1](https://github.com/johnlui/vue-tree-select/blob/master/assets/1.jpg)
 
 ## 系统要求
