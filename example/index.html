@@ -8,6 +8,7 @@
 </head>
 <body>
 
+  <!-- 递归引用的模板 -->
   <template id="one-select" style="display: none;">
     <ul>
       <li v-for="(node, key, index) in tree">
@@ -23,11 +24,13 @@
     </ul>
   </template>
 
+  <!-- 整体树容器 -->
   <div id="tree">
     <one-select v-bind:isroot="true" v-bind:tree="tree"></one-select>
   </div>
 
 <script>
+// 初始数据
 var treeData = {
   level_1: {
     level_2: {
@@ -115,6 +118,7 @@ vm = new Vue({
     tree: treeData
   },
   methods: {
+    // 返回最终数据
     getResult: function() {
       return Object.assign({}, this.tree);
     }
