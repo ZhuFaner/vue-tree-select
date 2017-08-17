@@ -29,23 +29,63 @@
     <one-select v-bind:isroot="true" v-bind:tree="tree"></one-select>
   </div>
 
-<script>
-// 初始数据
-var treeData = {
-  level_1: {
-    level_2: {
-      level_3_1: {
-        level_4_1: {},
-        level_4_2: {},
-        level_4_3: {},
-        level_4_4: {}
+<textarea id="treeDataJSON" style="display: none;">
+{
+  "客户管理": {
+    "我的客户": {
+      "新分配": {},
+      "跟进中": {},
+      "签单客户": {},
+      "长期客户": {},
+      "放弃客户": {},
+      "全部客户": {}
+    },
+    "长期客户权限": {
+      "设为长期客户": {},
+      "还原长期客户": {}
+    }
+  },
+  "采购列表": {
+    "添加异常客情": {},
+    "添加采购单": {},
+    "采购退货单列表": {},
+    "添加采购退货单": {},
+    "综合查询报表": {},
+    "对帐单列表": {},
+    "添加对帐单": {},
+    "供应商管理": {},
+    "供应商联系人": {},
+    "品牌列表": {
+      "宝洁": {},
+      "乐视": {
+        "乐视网": {},
+        "乐视手机": {
+          "乐视手机 1": {},
+          "乐视手机 2": {},
+          "乐视手机 3": {},
+          "乐视手机 4": {},
+          "乐视手机 5": {
+            "体验超深层级": {
+              "继续体验超深层级": {
+                "依然体验超深层级": {},
+                "依然体验超深层级 2": {}
+              }
+            }
+          }
+        },
+        "乐视电视": {}
       },
-      level_3_2: {
-        level_4_5: {}
-      }
+      "可口可乐": {},
+      "圣象": {}
     }
   }
-};
+}
+</textarea>
+
+<script>
+// 初始数据
+var treeDataJSON = document.getElementById("treeDataJSON").value;
+var treeData = JSON.parse(treeDataJSON);
 Vue.component('one-select', {
   name: 'one-select',
   template: '#one-select',
